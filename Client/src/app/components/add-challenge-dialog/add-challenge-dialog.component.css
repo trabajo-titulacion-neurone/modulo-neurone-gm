@@ -1,0 +1,32 @@
+.list-item-line-left{
+  display: inline-block;
+  font-size: small;
+  width: 20%;
+  margin-right: 10%;
+}
+
+.list-item-line-right{
+  display: inline-block;
+  width: 20%;
+  font-size: small;
+  text-align: right;
+}
+
+.mat-icon{
+  text-align: right;
+  margin-left: 10%;
+  cursor: pointer;
+}
+
+.input-1{
+  display: block;
+}
+
+.mat-dialog-content{
+  width: 60vh;
+}
+
+.mat-form-field{
+  margin-top: 1%;
+}
+

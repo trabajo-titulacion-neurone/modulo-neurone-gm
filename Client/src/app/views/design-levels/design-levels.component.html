@@ -1,0 +1,40 @@
+<app-design marked="levels"></app-design>
+<mat-spinner class="load-spinner" diameter=50 strokeWidth=10 *ngIf="load"></mat-spinner>
+<div class="design-content" [hidden]="load">
+  <div class="column">
+    <button mat-raised-button class="button button-add" (click)="openAddLevelDialog()">{{"add" | translate}}</button>
+    <mat-form-field style="width: 100%">
+      <mat-label>{{"filter"| translate}}</mat-label>
+      <input matInput (keyup)="applyFilter($event)" #input>
+    </mat-form-field>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z1" style="width: 100%">
+      <ng-container matColumnDef="name">
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+      <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="select(row)" style="cursor:pointer"></mat-row>
+    </table>
+    <mat-paginator class="mat-elevation-z1" [pageSizeOptions]="[5, 10]" showFirstLastButtons style="width: 100%;"></mat-paginator>
+  </div>
+  <div *ngIf="selectedRow!=null" class="display-column">
+    <button mat-raised-button class="button button-edit" (click)="openEditLevelDialog()">{{"edit" | translate}}</button>
+    <button mat-raised-button class="button button-delete" (click)="deleteLevel()">{{"delete" | translate}}</button>
+    <div class="mat-elevation-z5 points-column">
+      <div style="width: 30%; float: left">
+        <p class="attributes-name">{{"name" | translate}}: </p>
+        <p class="attributes-name">{{"code" | translate}}: </p>
+        <p class="attributes-name" style="height: 35px;">{{"description" | translate}}: </p>
+        <p class="attributes-name">{{"level.pointsRequired" | translate}}: </p>
+        <p class="attributes-name">{{"level.pointsThreshold" | translate}}: </p>
+        <p class="attributes-name" *ngIf="selectedRow.image_url">{{"icon" | translate}}: </p>
+      </div>
+      <div style="width: 60%; float: right">
+        <p class="attributes-value">{{selectedRow.name}}</p>
+        <p class="attributes-value">{{selectedRow.code}}</p>
+        <textarea matInput readonly style="margin-top: 0 !important; padding: 0 !important;" class="attributes-value">{{selectedRow.description}}</textarea>
+        <p class="attributes-value">{{selectedRow.point_required.name}}</p>
+        <p class="attributes-value">{{selectedRow.point_threshold}}</p>
+        <img class="display-img" [src]="selectedRow.image_url" *ngIf="selectedRow.image_url">
+      </div>
+    </div>
+  </div>
+</div>

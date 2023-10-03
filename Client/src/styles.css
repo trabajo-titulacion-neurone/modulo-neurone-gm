@@ -1,0 +1,160 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: white;}
+
+
+/*Common*/
+.mb8{
+    margin-bottom: 8px;
+}
+
+.fl{
+    float: left !important;
+}
+
+.fr{
+    float: right !important;
+}
+
+.di-ib{
+    display: inline-block;
+}
+
+.di-b{
+    display: block;
+}
+
+.mat-button:disabled{
+    color: gainsboro;
+    background-color: white;
+  }
+
+.success{
+    background-color: #3c763d;
+    color: white;
+}
+
+.danger{
+    background-color: #EF2917;
+    color: white;
+}
+
+.info{
+    background-color: #0c5460;
+    color: white;
+}
+
+.load-spinner{
+    margin-top: 20% !important;
+    width: 50%;
+    margin: auto;
+}
+
+/*Content below header*/
+.main-content{
+    position: absolute;
+    top: 8.9%;
+    left: 0;
+    right: 0;
+    width: 100%;
+ }
+
+/*Design content*/
+.design-content{
+    position: absolute;
+    top: 9%;
+    left: 21%;
+    right: 0;
+    width: 79%;
+    height: 89vh;
+}
+
+.button{
+    font-size: calc(0.5em + 1vmin);
+    color: white;
+    margin-bottom: 3% !important;
+}
+
+.button-add{
+    width: 30%;
+    height: 5%;
+    background-color: #3c763d;
+  }
+
+.button-delete{
+    width: 30%;
+    height: 10%;
+    float: right;
+    background-color: #EF2917;
+ }
+ 
+.column{
+    float: left;
+    width: 25%;
+    padding: 1%;
+    height: 95%;
+    margin: 2% !important;
+}
+  
+.display-column{
+    float: left;
+    width: 40%;
+    padding: 1%;
+    height: 45%;
+    margin: 2% !important;
+}
+  
+.points-column{
+    margin-top: 0.5%;
+    width: 100%;
+    height: 80%;
+    padding: 1%;
+    border: solid 0.1vh gray;
+    border-radius: 25px;
+}
+
+.button-edit{
+    width: 30%;
+    height: 10%;
+    background-color: #0c5460;
+}
+
+.attribute-name-container{
+    width: 30%;
+    margin-top: 2%; 
+    float: left
+}
+
+.attribute-value-container{
+    width: 60%;
+    margin-top: 2%; 
+    float: right
+}
+
+.attributes-name{
+    margin-top: 10px !important;
+    color: 	#696969;
+    text-align: right;
+    font-family: Century Gothic, sans-serif;
+    font-size: calc(0.5em + 1vmin);
+  }
+  
+.attributes-value{
+    margin-top: 10px !important;
+    color: black;
+    text-align: left;
+    font-family: Century Gothic, sans-serif;
+    font-size: calc(0.5em + 1vmin);
+}
+
+.display-img{
+    width: 80px;
+    height: 80px;
+}
+
+.toast-container .toast {
+    opacity: 1;
+  }

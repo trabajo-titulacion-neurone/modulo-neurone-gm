@@ -1,0 +1,29 @@
+.webhooks-form{
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 3%;
+    border: solid 1px black;
+    border-radius: 20px;
+}
+
+.mat-form-field{
+    display: inline-block;
+    width: 55%;
+}
+
+.mat-card-title{
+    margin-bottom: 5%;
+}
+
+.mat-icon{
+    display: inline-block;
+    margin-left: 5%;
+    top: 50%;
+    left: 50%;
+    transform: translate(+50%, +50%);
+    color: #0c5460;
+  }
+  
+  ::ng-deep .mat-tooltip {
+    font-size: 14px !important;
+  }

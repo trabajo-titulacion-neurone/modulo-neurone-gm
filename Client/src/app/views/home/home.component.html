@@ -1,0 +1,56 @@
+<app-header marked="home"></app-header>
+<div class="main-content">
+  <h2 class="app-title">NEURONE A DAY</h2>
+  <div class="row">
+    <div class="image-box"><img src="/assets/tarea.png" alt="imagen" height="95%" width="95%"></div>
+    <div class="info-box">
+      <div class="box-title">{{"challenges" | translate}}</div>
+      <div class="box-amount">{{summary.challenges}}</div>
+    </div>
+
+    <div class="image-box"><img src="/assets/progress.png" alt="imagen" height="95%" width="95%"></div>
+    <div class="info-box">
+      <div class="box-title">{{"levels" | translate}}</div>
+      <div class="box-amount">{{summary.levels}}</div>
+    </div>
+
+    <div class="image-box"><img src="/assets/boligrafo.png" alt="imagen" height="95%" width="95%"></div>
+    <div class="info-box">
+      <div class="box-title">{{"actions" | translate}}</div>
+      <div class="box-amount">{{summary.actions}}</div>
+    </div>
+
+    <div class="image-box"><img src="/assets/estrella.png" alt="imagen" height="95%" width="95%"></div>
+    <div class="info-box">
+      <div class="box-title">{{"points" | translate}}</div>
+      <div class="box-amount">{{summary.points}}</div>
+    </div>
+
+    <div class="image-box"><img src="/assets/rank.png" alt="imagen" height="95%" width="95%"></div>
+    <div class="info-box">
+      <div class="box-title">{{"leaderboards" | translate}}</div>
+      <div class="box-amount">{{summary.leaderboards}}</div>
+    </div>
+
+    <div class="image-box"><img src="/assets/reward.png" alt="imagen" height="95%" width="95%"></div>
+    <div class="info-box">
+      <div class="box-title">{{"badges" | translate}}</div>
+      <div class="box-amount">{{summary.badges}}</div>
+    </div>
+
+  </div>
+  <h2 class="app-title">{{"home.secondTitle"| translate}}</h2>
+  <div class="row">
+    <div class="image-box"><img src="/assets/usuario.png" alt="imagen" height="95%" width="95%"></div>
+    <div class="info-box">
+      <div class="box-title">{{"players"| translate}}</div>
+      <div class="box-amount">{{summary.players}}</div>
+    </div>
+
+    <div class="image-box"><img src="/assets/equipo.png" alt="imagen" height="95%" width="95%"></div>
+    <div class="info-box">
+      <div class="box-title">{{"groups"| translate}}</div>
+      <div class="box-amount">{{summary.groups}}</div>
+    </div>
+  </div>
+</div>

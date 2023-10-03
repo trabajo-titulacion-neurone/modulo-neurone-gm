@@ -1,0 +1,18 @@
+<app-header marked="design"></app-header>
+<div class="main-content">
+  <div class="design-column">
+    <a href="/design/actions" *ngIf="actions"><p class="p-label" ><strong class="marked">{{"actions" | translate}}</strong></p></a>
+    <a href="/design/actions" *ngIf="!actions"><p class="p-label" >{{"actions" | translate}}</p></a>
+    <a href="/design/points" *ngIf="points"><p class="p-label" ><strong class="marked">{{"points" | translate}}</strong></p></a>
+    <a href="/design/points" *ngIf="!points"><p class="p-label" >{{"points" | translate}}</p></a>
+    <a href="/design/levels" *ngIf="levels"><p class="p-label" ><strong class="marked">{{"levels" | translate}}</strong></p></a>
+    <a href="/design/levels" *ngIf="!levels"><p class="p-label" >{{"levels" | translate}}</p></a>
+    <a href="/design/challenges" *ngIf="challenges"><p class="p-label" ><strong class="marked">{{"challenges" | translate}}</strong></p></a>
+    <a href="/design/challenges" *ngIf="!challenges"><p class="p-label" >{{"challenges" | translate}}</p></a>
+    <a href="/design/badges" *ngIf="badges"><p class="p-label" ><strong class="marked">{{"badges" | translate}}</strong></p></a>
+    <a href="/design/badges" *ngIf="!badges"><p class="p-label" >{{"badges" | translate}}</p></a>
+    <a href="/design/leaderboards" *ngIf="leaderboards"><p class="p-label" ><strong class="marked">{{"leaderboards" | translate}}</strong></p></a>
+    <a href="/design/leaderboards" *ngIf="!leaderboards"><p class="p-label" >{{"leaderboards" | translate}}</p></a>
+  </div>
+</div>
+

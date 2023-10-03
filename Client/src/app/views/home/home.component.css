@@ -1,0 +1,53 @@
+.app-title{
+  margin-top: 2%;
+  margin-left: 4%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.row{
+  margin-top: 2%;
+  margin-left: 2%;
+}
+
+.image-box{
+  margin-left: 2%;
+  display: inline-block;
+  height: 10vh;
+  width: 10vh;
+  vertical-align:top;
+  background: #F2F2F2;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 2px #fff inset,
+  -1px -1px 2px #fff inset;
+  border-radius: 3px/6px;
+}
+
+.info-box{
+  display: inline-block;
+  height: 10vh;
+  width: 15vh;
+  vertical-align:top;
+  background: #F2F2F2;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 2px #fff inset,
+  -1px -1px 2px #fff inset;
+  border-radius: 3px/6px;
+}
+
+.box-title{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 5%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+}
+
+.box-amount{
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  margin-top: 15%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+}

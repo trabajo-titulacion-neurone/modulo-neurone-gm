@@ -1,0 +1,11 @@
+<app-header marked="players"></app-header>
+<div class="main-content">
+  <button class="btn" (click)="addPlayer()"><mat-icon>add</mat-icon></button>
+  <div class="players-container">
+    <mat-card *ngFor="let player of players" class="player-card">
+      <img src="/assets/img_avatar.png" *ngIf="!player.image_url" alt="Avatar" class="avatar">
+      <img [src]="player.image_url" *ngIf="player.image_url"alt="Avatar" class="avatar">
+      <p [routerLink]="['/players/'+player.code+'/profile']" style="cursor: pointer;">{{player.name}} {{player.last_name}}</p  >
+    </mat-card>
+  </div>
+</div>

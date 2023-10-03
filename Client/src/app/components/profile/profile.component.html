@@ -1,0 +1,60 @@
+<mat-spinner class="load-spinner" diameter=50 strokeWidth=10 *ngIf="load"></mat-spinner>
+<div class="content-wrapper" [hidden]="load">
+    <h1 class="h1">{{player?.name}} {{player?.last_name}}</h1>
+    <div class="content-container" >
+        <div class="container-left">
+           <div class="player-image mb8">
+            <img *ngIf="player?.image_url" [src]="player.image_url"  class="player-image img">
+            <img *ngIf="!player?.image_url"src="/assets/img_avatar.png" class="player-image img">
+           </div>
+           <ul class="player-status di-b">
+               <li class="clear"><span class="player-status-title di-ib fl">{{"name" | translate}}:</span> <span class="player-status-value di-ib fr">{{player?.name}}</span></li>
+               <li class="clear"><span class="player-status-title di-ib fl">{{"playerProfile.last_name" | translate}}:</span> <span class="player-status-value di-ib fr">{{player?.last_name}}</span></li>
+               <li class="clear"><span class="player-status-title di-ib fl">{{"code" | translate}}:</span> <span class="player-status-value di-ib fr">{{player?.code}}</span></li>
+           </ul>
+           <ul class="player-status di-b">
+            <li class="clear"><span class="player-status-title di-ib fl color-blue">{{"playerProfile.summaryStatistics" | translate}}</span></li>
+            </ul>
+            <ul class="player-status di-b">
+                <li class="clear"><span class="player-status-title di-ib fl">{{"playerProfile.completedChallenges" | translate}}:</span> <span class="player-status-value di-ib fr">{{completedChallenges.length}}</span></li>
+                <li class="clear"><span class="player-status-title di-ib fl">{{"playerProfile.levels" | translate}}:</span> <span class="player-status-value di-ib fr">{{playerLevels.length}}</span></li>
+                <li class="clear"><span class="player-status-title di-ib fl">{{"playerProfile.badges" | translate}}:</span> <span class="player-status-value di-ib fr">{{playerBadges.length}}</span></li>
+                <li class="clear"><span class="player-status-title di-ib fl">{{"actions" | translate}}:</span> <span class="player-status-value di-ib fr">{{playersActionTotal.length}}</span></li>
+            </ul>
+        </div>
+        <div class="container-right">
+            <h2 class="h2">{{"statistics" | translate}}</h2>
+            <div class="user-statistics">
+                <div class="stats">
+                    <h5 class="h5">{{"playerProfile.completedChallenges" | translate}}</h5>
+                    <li class="clear m0" *ngIf="completedChallenges.length === 0"><span class="player-status-value di-ib fl color-blue">--</span></li>
+                    <li class="clear m0" *ngFor="let playerChallenge of completedChallenges"><span class="player-status-value di-ib fl color-blue">{{playerChallenge.challenge.name}}</span></li>
+                </div>
+                <div class="stats">
+                    <h5 class="h5">{{"playerProfile.levels" | translate}}</h5>
+                    <li class="clear m0" *ngIf="playerLevels.length === 0"><span class="player-status-value di-ib fl color-blue">--</span></li>
+                    <li class="clear m0" *ngFor="let playerLevel of playerLevels"><span class="player-status-value di-ib fl color-blue">{{playerLevel.level.name}}</span> <span class="player-status-value di-ib fr">{{playerLevel.acquisition_date.slice(0,10)}}</span></li>
+                </div>
+            </div>
+            <div class="user-statistics">
+                <div class="stats">
+                    <h5 class="h5">{{"playerProfile.totalPoints" | translate}}</h5>
+                    <li class="clear m0" *ngIf="playerPoints.length === 0"><span class="player-status-value di-ib fl color-blue">--</span></li>
+                    <li class="clear m0" *ngFor="let playerPoint of playerPoints"><span class="player-status-value di-ib fl color-blue">{{playerPoint.point.name}}</span> <span class="player-status-value di-ib fr">{{playerPoint.amount}}</span></li>
+                </div>
+                <div class="stats">
+                    <h5 class="h5">{{"playerProfile.badges" | translate}}</h5>
+                    <li class="clear m0" *ngIf="playerBadges.length === 0"><span class="player-status-value di-ib fl color-blue">--</span></li>
+                    <li class="clear m0" *ngFor="let playerBadge of playerBadges"><img [src]="playerBadge.badge.image_url" style="width: 40px; height: 40px; float: left; margin-right: 20px;"> <span class="player-status-value di-ib fl color-blue">{{playerBadge.badge.title}}</span> <span class="player-status-value di-ib fr">{{playerBadge.acquisition_date.slice(0,10)}}</span></li>
+                </div>
+            </div>
+            <div class="user-statistics" style="width:50%;">
+                <div class="stats">
+                    <h5 class="h5">{{"playerProfile.lastActions" | translate}}</h5>
+                    <li class="clear m0" *ngIf="playerActions.length === 0"><span class="player-status-value di-ib fl color-blue">--</span></li>
+                    <li class="clear m0" *ngFor="let playerAction of playerActions"><span class="player-status-value di-ib fl color-blue">{{playerAction.action.name}}</span> <span class="player-status-value di-ib fr">{{playerAction.date.slice(0,10)}}</span></li>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

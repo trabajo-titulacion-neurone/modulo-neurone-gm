@@ -1,0 +1,39 @@
+<app-design marked="leaderboards"></app-design>
+<mat-spinner class="load-spinner" diameter=50 strokeWidth=10 *ngIf="load"></mat-spinner>
+<div class="design-content" [hidden]="load">
+  <div class="column">
+    <button mat-raised-button class="button button-add" (click)="openAddLeaderboardDialog()">{{"add" | translate}}</button>
+    <mat-form-field style="width: 100%">
+      <mat-label>{{"filter"| translate}}</mat-label>
+      <input matInput (keyup)="applyFilter($event)" #input>
+    </mat-form-field>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z1" style="width: 100%">
+      <ng-container matColumnDef="name">
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+      <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="select(row)" style="cursor:pointer"></mat-row>
+    </table>
+    <mat-paginator class="mat-elevation-z1" [pageSizeOptions]="[5, 10]" showFirstLastButtons style="width: 100%;"></mat-paginator>
+  </div>
+  <div *ngIf="selectedRow!=null" class="display-column">
+    <button mat-raised-button class="button button-edit" (click)="openEditLeaderboardDialog()">{{"edit" | translate}}</button>
+    <button mat-raised-button class="button button-delete" (click)="deleteLeaderboard()">{{"delete"| translate}}</button>
+    <div class="mat-elevation-z5 points-column">
+      <div style="width: 30%; float: left">
+        <p class="attributes-name">{{"name" | translate}}: </p>
+        <p class="attributes-name">{{"code" | translate}}: </p>
+        <p class="attributes-name">{{"leaderboard.type" | translate}}: </p>
+        <p class="attributes-name">{{"leaderboard.elementCode" | translate}}: </p>
+      </div>
+      <div style="width: 60%; float: right">
+        <p class="attributes-value">{{selectedRow.name}}</p>
+        <p class="attributes-value">{{selectedRow.code}}</p>
+        <p class="attributes-value">{{selectedRow.parameter}}</p>
+        <p class="attributes-value">{{selectedRow.element_code}}</p>
+      </div>
+      <div style="width: 100%">
+        <button mat-raised-button style="width: 40%; margin-left: 30%; margin-top: 5%; background-color: #004085; color: white" [routerLink]="['/design/leaderboards/see/'+selectedRow.code]" >{{"generate" | translate}}</button>
+      </div>
+    </div>
+  </div>
+</div>

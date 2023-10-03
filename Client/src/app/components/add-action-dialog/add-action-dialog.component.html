@@ -1,0 +1,56 @@
+<div mat-dialog-content>
+  <h1 mat-dialog-title>{{data.message}}</h1>
+  <form [formGroup]="formGroup">
+
+    <mat-form-field>
+      <mat-label>{{"name" | translate}}</mat-label>
+      <input matInput type="text" formControlName="name">
+      <mat-error>
+        {{"fieldRequired" | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="withCode">
+      <mat-label>{{"code" | translate}}</mat-label>
+      <input matInput type="text" formControlName="code">
+      <mat-error>
+        {{"fieldRequired" | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field >
+      <mat-label>{{"description" | translate}}</mat-label>
+      <textarea matInput
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                formControlName="description"
+                cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="5"></textarea>
+      <mat-error>
+        {{"fieldRequired" | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+      <mat-label>{{"repeatable" | translate}}</mat-label>
+      <mat-select formControlName="repeatable" >
+        <mat-option *ngFor="let r of repeatable" [value]="r">{{r}}</mat-option>
+      </mat-select>
+      <mat-error>
+        {{"fieldRequired" | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <div class="image-form">
+      <label for="file" style="margin-right: 2%;">{{"chooseImage" | translate}}</label>
+      <input type="file"
+            id="file"
+            (change)="handleFileInput($event.target.files)">
+    </div>
+  
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button class="success" (click)="submitForm()" [disabled]="!formGroup.valid">{{"confirm" | translate}}</button>
+  <button mat-button class="danger" (click)="onClickNO()">{{"cancel" | translate}}</button>
+</div>

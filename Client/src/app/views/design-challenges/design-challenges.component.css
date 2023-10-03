@@ -1,0 +1,28 @@
+.display-column{
+  height: 80%;
+}
+
+.points-column{
+  height: 100%;
+}
+
+.button-add{
+  max-width: 30%;
+}
+.button-delete{
+  height: 6%;
+}
+
+.button-edit{
+  height: 6%;
+}
+
+.attributes-title{
+  margin-top: 10px;
+  color: black;
+  text-align: center;
+  font-family: Century Gothic, sans-serif;
+  font-size: calc(0.5em + 1vmin);
+}
+
+

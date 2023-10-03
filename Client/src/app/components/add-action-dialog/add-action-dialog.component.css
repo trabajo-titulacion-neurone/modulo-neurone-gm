@@ -1,0 +1,15 @@
+.mat-form-field{
+  display: block;
+  margin-top: 1.5%;
+}
+
+.mat-dialog-content{
+  width: 40vh;
+}
+
+.image-form{
+  display: block;
+  margin-top:4%;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: gray;
+}

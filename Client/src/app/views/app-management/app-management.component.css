@@ -1,0 +1,60 @@
+.main-content{
+  top: 8.9%;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 850px;
+}
+
+.h1-1{
+  display: inline-block;
+  width: 20%;
+  font-family: Candara, sans-serif;
+  margin-top: 2%;
+}
+
+.h1-2{
+  font-family: Candara, sans-serif;
+  margin-top: 3%;
+}
+
+.select-app-container{
+  background: white;
+  height: 10%;
+  width: 25%;
+  display: inline-block;
+}
+
+.button-change{
+  width: 10%;
+  height: 5%;
+}
+
+.button-change-2{
+  width: 10%;
+  height: 4%;
+  float: none;
+  margin-left: 2%;
+  font-size: calc(0.2em + 1vmin);
+}
+
+.button-webhooks{
+  width: 30%;
+  margin-left: 35%;
+  margin-top: 2%;
+  background-color: #0c5460;
+  color: white;
+}
+
+.column{
+  margin-left: 0 !important;
+  padding: 0;
+}
+
+.display-column{
+  padding: 0;
+}
+
+.points-column{
+  padding: 0;
+}

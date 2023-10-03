@@ -1,0 +1,38 @@
+.main-content{
+  position: absolute;
+  top: 8.9%;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.design-column {
+  float: left;
+  width: 20%;
+  height: 90.9vh;
+  border: solid 0.1vh #181818;
+}
+
+.p-label{
+  margin: 5vh auto auto;
+  text-align: center;
+  color: black;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: calc(0.75em + 1vmin);
+  letter-spacing: 0.2em;
+}
+
+.marked{
+  color: #08c50e;
+  font-weight: 1200;
+}
+
+a {
+  text-decoration:none;
+}
+
+.p-label:hover {
+  color: #08c50e;
+  font-weight: bolder;
+  text-shadow: 0 0 20px #d1ebd1, 0 0 30px #d1ebd1, 0 0 40px #d1ebd1, 0 0 50px #d1ebd1, 0 0 60px #d1ebd1, 0 0 70px #d1ebd1, 0 0 80px #d1ebd1;
+}

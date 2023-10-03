@@ -1,0 +1,53 @@
+<app-design marked="challenges"></app-design>
+<mat-spinner class="load-spinner" diameter=50 strokeWidth=10 *ngIf="load"></mat-spinner>
+<div class="design-content" [hidden]="load">
+  <div class="column">
+    <button mat-raised-button class="button button-add" (click)="openAddAChallengeDialog()">{{"add" | translate}}</button>
+    <mat-form-field style="width: 100%">
+      <mat-label>{{"filter" | translate}}</mat-label>
+      <input matInput (keyup)="applyFilter($event)" #input>
+    </mat-form-field>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z1" style="width: 100%">
+      <ng-container matColumnDef="name">
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+      <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="select(row)" style="cursor:pointer"></mat-row>
+    </table>
+    <mat-paginator class="mat-elevation-z1" [pageSizeOptions]="[5, 10]" showFirstLastButtons style="width: 100%;"></mat-paginator>
+  </div>
+  <div *ngIf="selectedRow!=null" class="display-column">
+    <button mat-raised-button class="button button-edit" (click)="openEditChallengeDialog()">{{"edit" | translate}}</button>
+    <button mat-raised-button class="button button-delete" (click)="deleteChallenge()">{{"delete" | translate}}</button>
+    <div class="mat-elevation-z5 points-column">
+      <div style="width: 40%; float: left">
+        <p class="attributes-name">{{"name" | translate}}: </p>
+        <p class="attributes-name">{{"code" | translate}}: </p>
+        <p class="attributes-name" style="height: 35px;">{{"description" | translate}}: </p>
+        <p class="attributes-name">{{"startDate" | translate}}: </p>
+        <p class="attributes-name">{{"endDate" | translate}}: </p>
+        <p class="attributes-name" *ngIf="selectedRow.badge">{{"challenge.rewardBadgeName" | translate}}: </p>
+        <p class="attributes-name" *ngIf="selectedRow.badge">{{"challenge.rewardBadge" | translate}}: </p>
+      </div>
+      <div style="width: 58%; float: right">
+        <p class="attributes-value">{{selectedRow.name}}</p>
+        <p class="attributes-value">{{selectedRow.code}}</p>
+        <textarea matInput readonly style="margin-top: 0 !important; padding: 0 !important;" class="attributes-value">{{selectedRow.description}}</textarea>
+        <p class="attributes-value">{{selectedRow.start_display}}</p>
+        <p class="attributes-value">{{selectedRow.end_display}}</p>
+        <p class="attributes-value" *ngIf="selectedRow.badge">{{selectedRow.badge.title}}</p>
+        <img class="display-img" [src]="selectedRow.badge.image_url" *ngIf="selectedRow.badge">
+      </div>
+      <div *ngIf="selectedRow.badge" style="margin-top: 55%;"></div>
+      <div style="width: 100%; margin-top: 60%">
+        <p class="attributes-title" *ngIf="this.selectedRow.actions_required.length > 0"><strong>{{"challenge.actionsRequired" | translate}}</strong></p>
+        <p class="attributes-title" *ngFor="let action of selectedRow.actions_required"><span style="color: #696969">{{"challenge.actionName" | translate}}:</span> &nbsp;{{action.action.name}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span style="color: #696969">{{"challenge.actionTimesRequired" | translate}}:</span> &nbsp;{{action.times_required}}</p>
+        <p class="attributes-title" *ngIf="this.selectedRow.challenges_required.length > 0"><strong>{{"challenge.challengesRequired" | translate}}</strong></p>
+        <p class="attributes-title" *ngFor="let challenge of selectedRow.challenges_required"><span style="color: #696969">{{"challenge.challengeRequiredName" | translate}}:</span> &nbsp;{{challenge.challenge.name}}</p>
+        <p class="attributes-title" *ngIf="this.selectedRow.points_awards.length > 0"><strong>{{"challenge.pointsAwards" | translate}}</strong></p>
+        <p class="attributes-title" *ngFor="let point of selectedRow.points_awards"><span style="color: #696969">{{"challenge.pointName" | translate}}:</span> &nbsp;{{point.point.name}}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span style="color: #696969">{{"challenge.pointsAmount" | translate}}:</span> &nbsp;{{point.amount}}</p>
+      </div>
+    </div>
+  </div>
+</div>

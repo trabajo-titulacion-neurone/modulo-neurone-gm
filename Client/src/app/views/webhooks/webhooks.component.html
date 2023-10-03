@@ -1,0 +1,49 @@
+<app-header marked="management"></app-header>
+<div class="main-content">
+    <mat-card class="mat-elevation-z0 webhooks-form">
+        <mat-card-title>{{"appManagement.webhooksTitle" | translate}}</mat-card-title>
+        <form [formGroup]="formGroup">
+            <mat-form-field>
+                <mat-label>{{"appManagement.firstUrl" | translate}}</mat-label>
+                <input matInput type="text" formControlName="givePointsUrl">
+            </mat-form-field>
+            <mat-icon
+                [matTooltip]="firstUrlTip"
+                matTooltipClass="tooltip">
+                info
+            </mat-icon>
+        
+            <mat-form-field >
+                <mat-label>{{"appManagement.secondUrl" | translate}}</mat-label>
+                <input matInput type="text" formControlName="challengeCompletedUrl">
+            </mat-form-field>
+            <mat-icon
+                [matTooltip]="secondUrlTip"
+                matTooltipClass="tooltip">
+                info
+            </mat-icon>
+        
+            <mat-form-field >
+                <mat-label>{{"appManagement.thirdUrl" | translate}}</mat-label>
+                <input matInput type="text" formControlName="badgeAcquiredUrl">
+            </mat-form-field>
+            <mat-icon
+                [matTooltip]="thirdUrlTip"
+                matTooltipClass="tooltip">
+                info
+            </mat-icon>
+        
+            <mat-form-field >
+                <mat-label>{{"appManagement.fourthUrl" | translate}}</mat-label>
+                <input matInput type="text" formControlName="levelUpUrl">
+            </mat-form-field>
+            <mat-icon
+                [matTooltip]="fourthUrlTip"
+                matTooltipClass="tooltip">
+                info
+            </mat-icon>
+        </form>
+        <button mat-button (click)="submitForm()" [disabled]="!formGroup.valid">{{"save" | translate}}</button>
+        <button mat-button (click)="onClickNO()">{{"back" | translate}}</button>
+    </mat-card>
+</div>
