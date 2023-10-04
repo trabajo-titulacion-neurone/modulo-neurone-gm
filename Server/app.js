@@ -26,7 +26,61 @@ const groupRoutes = require('./api/groupRoutes');
 
 
 //db connection
-mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PWD}@localhost:27017/neuronegm`,{useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true});
+//mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PWD}@localhost:27017/neuronegm`,{useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true});
+
+
+
+/////////////////// CODIGO MIOOO ////////////////////////////////
+
+mongoose.connect(
+    `${process.env.URI}`,
+    {
+      authSource: "admin",
+      user: `${process.env.DB_USER}`,
+      pass: `${process.env.DB_PWD}`, 
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    }
+  );
+
+// Verifica si la conexión a la base de datos fue exitosa
+mongoose.connection.on('connected', () => {
+    console.log('Conexión a la base de datos exitosa');
+    let db = mongoose.connection;
+    console.log("NOMBRE DE LA BD: ",db.name);
+    console.log("La clave es: ",process.env.DB_PWD);
+  });
+  
+  mongoose.connection.on('error', (err) => {
+    console.error('Error de conexión a la base de datos:', err);
+  });
+
+
+
+////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /** Express setup **/

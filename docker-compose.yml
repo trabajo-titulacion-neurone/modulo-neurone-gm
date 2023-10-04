@@ -1,25 +1,35 @@
 version: "3"
 services:
-  server:
-    container_name: server-neuronegm
-    restart: always
-    build: ./Server
-    ports:
-      - "3080:3080"
-    links:
-      - mongo
-    volumes:
-      - .:/usr/src/server-neuronegm
+  # server:
+  #   container_name: server-neuronegm
+  #   restart: always
+  #   build: ./Server
+  #   ports:
+  #     - "3080:3080"
+  #   links:
+  #     - mongo
+  #   volumes:
+  #     - .:/usr/src/server-neuronegm
   mongo:
     container_name: neuronegm
     image: mongo
     ports:
-      - "27018:27017"
-  client:
-    container_name: client-neuronegm
-    restart: always
-    build: ./Client
-    ports:
-      - "4200:4200"
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_DATABASE=neuronegm
+      - MONGO_INITDB_ROOT_USERNAME=neuroneAdmin
+      - MONGO_INITDB_ROOT_PASSWORD=DK,V-Dk6-*Pd-PM
     volumes:
-      - .:/usr/src/client-neuronegm
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data: # Declaración del volumen "mongo-data"
+
+  # client:
+  #   container_name: client-neuronegm
+  #   restart: always
+  #   build: ./Client
+  #   ports:
+  #     - "4200:4200"
+  #   volumes:
+  #     - .:/usr/src/client-neuronegm

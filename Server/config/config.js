@@ -10,7 +10,8 @@ process.env.AuthPORT = "http://localhost:9000/api"
 
 process.env.DB_USER = 'neuroneAdmin';
 
-process.env.DB_PWD = 'DK,V-Dk6-*Pd-PM';
+process.env.DB_PWD = 'admin';
+//process.env.DB_PWD = 'DK,V-Dk6-*Pd-PM';
 
 process.env.URI = "mongodb://localhost:27017/neuronegm";
 
