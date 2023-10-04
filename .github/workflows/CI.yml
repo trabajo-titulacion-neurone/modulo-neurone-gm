@@ -28,6 +28,8 @@ jobs:
         cache: 'npm'
         cache-dependency-path: './Server/package-lock.json'
     #- run: cd Server && npm install
-    - run: cd Server && docker ps
+    - run: docker run -d --name mongo-for-tests -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=neuroneAdmin -e MONGO_INITDB_ROOT_PASSWORD=admin -e MONGO_INITDB_DATABASE=neuronegm mongo:latest
+    - run: docker ps
+    - run: pm2 ls
     #- run: npm run build --if-present
     #- run: npm test
