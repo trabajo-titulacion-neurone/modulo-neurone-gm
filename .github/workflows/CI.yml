@@ -33,6 +33,6 @@ jobs:
     - run: npm install -g pm2
     - run: cd Server && npm install
     - run: cd Server && pm2 start app.js
-    - run: pm2 logs
+    #- run: pm2 logs
     #- run: npm run build --if-present
     #- run: npm test
