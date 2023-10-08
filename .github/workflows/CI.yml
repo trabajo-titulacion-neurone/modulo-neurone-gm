@@ -35,4 +35,4 @@ jobs:
     - run: cd Server && pm2 start app.js --name neurone-gm
     #- run: pm2 logs
     #- run: npm run build --if-present
-    #- run: npm test
+    - run: npm test
