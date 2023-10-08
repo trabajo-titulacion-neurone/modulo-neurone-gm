@@ -27,12 +27,12 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: './Server/package-lock.json'
-    # - run: cd Server && npm install
-    # - run: docker run -d --name mongo-for-tests -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=neuroneAdmin -e MONGO_INITDB_ROOT_PASSWORD=admin -e MONGO_INITDB_DATABASE=neuronegm mongo:latest
-    # - run: docker ps
-    # - run: npm install -g pm2
-    # - run: cd Server && npm install
-    # - run: cd Server && pm2 start app.js --name neurone-gm
+    - run: cd Server && npm install
+    - run: docker run -d --name mongo-for-tests -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=neuroneAdmin -e MONGO_INITDB_ROOT_PASSWORD=admin -e MONGO_INITDB_DATABASE=neuronegm mongo:latest
+    - run: docker ps
+    - run: npm install -g pm2
+    - run: cd Server && npm install
+    - run: cd Server && pm2 start app.js --name neurone-gm
     #- run: pm2 logs
     #- run: npm run build --if-present
     #- run: npm test
