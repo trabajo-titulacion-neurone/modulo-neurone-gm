@@ -5,7 +5,7 @@ const UserSchema = new Schema({
     username: {type: String, required: true, unique: true},
     email: {type: String},
     password: {type: String},
-    neuroneauth: {type: Boolean, required: true},
+    neuroneauth: {type: Boolean, required: false},
     createdAt: { type: Date, default: Date.now }
 });
 
