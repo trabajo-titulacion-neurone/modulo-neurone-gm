@@ -4,14 +4,15 @@ process.env.PORT = process.env.PORT || 3080;
 process.env.APP_URI = "http://localhost:3080"
 
 //Auth Port
-process.env.AuthPORT = "http://localhost:3005/api-docs"
+process.env.AuthPORT = "http://localhost:3005/api"
+//process.env.AuthPORT = "http://localhost:3005/api-docs"
 
 //DB
 
 process.env.DB_USER = 'neuroneAdmin';
 
-process.env.DB_PWD = 'admin';
-//process.env.DB_PWD = 'DK,V-Dk6-*Pd-PM';
+//process.env.DB_PWD = 'admin';
+process.env.DB_PWD = 'DK,V-Dk6-*Pd-PM';
 
 process.env.URI = "mongodb://localhost:27017/neuronegm";
 
